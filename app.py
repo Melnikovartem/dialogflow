@@ -1,7 +1,7 @@
 from flask import Flask, request
+import config
 
 app = Flask(__name__)
-api = Api(app)
 
 @app.route('/')
 def hello_world():
@@ -16,4 +16,4 @@ def ProccessGoogleRequest():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host=config.web_ip, port=config.web_port)
