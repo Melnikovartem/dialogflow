@@ -14,12 +14,22 @@ def index():
 def test():
     return render_template('test.html')
 
+#old version
 @app.route('/mama')
 def mama():
-    return render_template('mama.html')
+    return render_template('mom.html')
+
+@app.route('/mom')
+def mom():
+    return render_template('mom.html')
 
 @app.route('/data')
 def data():
+    return render_template('data.html', number=number)
+
+@app.route('/data', methods=["POST"])
+def data_post():
+    number = request.form.get('number')
     return render_template('data.html', number=number)
 
 @app.route('/google', methods=["GET"])
