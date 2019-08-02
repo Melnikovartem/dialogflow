@@ -41,7 +41,7 @@ def ProccessGoogleRequest_post():
     req = request.get_json()
     response = 'Что-то пошло не так'
     if req['queryResult']['intent']['displayName']=='Give_number':
-        response=number
+        response="Ваше число - " + str(number)
     return {"fulfillment_text": response}
 
 
