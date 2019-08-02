@@ -1,7 +1,10 @@
 from flask import Flask, request, render_template
 import config
+from random import randint
 
 app = Flask(__name__)
+
+number = randint(1, 100)
 
 @app.route('/')
 def index():
@@ -11,9 +14,13 @@ def index():
 def test():
     return render_template('test.html')
 
+@app.route('/mama')
+def mama():
+    return render_template('mama.html')
+
 @app.route('/data')
 def data():
-    return "change data"
+    return render_template('data.html', number=number)
 
 @app.route('/google', methods=["GET"])
 def ProccessGoogleRequest_get():
