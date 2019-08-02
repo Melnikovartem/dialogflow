@@ -4,16 +4,16 @@ import config
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template('index.html')
 
 @app.route('/test')
 def test():
-    return 'web test window'
+    return render_template('test.html')
 
 @app.route('/data')
 def data():
-    return 'place to change data'
+    return "change data"
 
 @app.route('/google', methods=["GET"])
 def ProccessGoogleRequest_get():

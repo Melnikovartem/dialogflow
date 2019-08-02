@@ -10,8 +10,16 @@
 </head>
 
 <body>
+  <div class = "row">
+    <div class = "col">
+      <h1>
+        <a href="{{ url_for('index') }}" style="color:red" >Home</a>
+      </h1>
+    </div>
+  </div>
     {% block content %}
     {% endblock %}
+    
 </body>
 
 </html>
