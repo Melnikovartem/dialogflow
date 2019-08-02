@@ -41,7 +41,7 @@ def ProccessGoogleRequest_post():
     req = request.get_json()
     print('данные:', request.get_json())
     response = 'Ок'
-    return {"speech": response, "displayText": response}
+    return {"fulfillment_text": response}
 
 
 if __name__ == "__main__":
