@@ -7,10 +7,10 @@ app = Flask(__name__)
 def hello_world():
     return 'working'
 
-@app.route('/dialog')
+@app.route('/google')
 def ProccessGoogleRequest():
     req = request.get_json()
-    logging.debug(request.get_json())
+    print(request.get_json())
     response = ''
     return {"speech": response, "displayText": response}
 
