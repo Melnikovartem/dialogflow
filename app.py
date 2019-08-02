@@ -39,8 +39,9 @@ def ProccessGoogleRequest_get():
 @app.route('/google', methods=["POST"])
 def ProccessGoogleRequest_post():
     req = request.get_json()
-    print('данные:', request.get_json())
-    response = 'Ок'
+    response = 'Что-то пошло не так'
+    if req['queryResult']['intent']['displayName']=='Give_number':
+        response=number
     return {"fulfillment_text": response}
 
 
